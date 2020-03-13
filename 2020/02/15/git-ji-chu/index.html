@@ -1,0 +1,1571 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Git基础, 编程,教程学习,blog,记录">
+    <meta name="description" content="版本控制器版本控制是我们开发软件时的必备工作，将文件的版本进行系统的管理，不仅仅可以帮助我们灵活操作文件，也能简化我们开发的流程。
+不使用版本管理器的情况下，如果想要对文件的版本进行管理，需要将不同版本的文件分别存储起来，并分别命名，这样我">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Git基础 | 天天XIO习</title>
+    <link rel="icon" type="image/png" href="/avatar.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="天天XIO习" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">天天XIO习</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">天天XIO习</div>
+        <div class="logo-desc">
+            
+            小白的江湖修炼
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Tian-JQ" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Tian-JQ" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/太空1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Git基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Git/" class="post-category">
+                                Git
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-15
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="版本控制器"><a href="#版本控制器" class="headerlink" title="版本控制器"></a>版本控制器</h2><p>版本控制是我们开发软件时的必备工作，将文件的版本进行系统的管理，不仅仅可以帮助我们灵活操作文件，也能简化我们开发的流程。</p>
+<p>不使用版本管理器的情况下，如果想要对文件的版本进行管理，需要将不同版本的文件分别存储起来，并分别命名，这样我们的文件夹就会类似这样：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/blog1.png" alt=""></p>
+<p>随着新版本的迭代，我们的文件则越来越多，也越来越难管理。在团队开发时，如果多人同时对一个文件进行操作，则需要各自保存不同的版本，然后集中审核内容。可想而知，在改动幅度大，人数多的情况下，使用传统方式来开发简直就是噩梦。</p>
+<p>而版本控制器就是一个解决这些痛点的神奇软件，它不仅仅可以帮助我们记录每次文件的改动，还可以让同事协同编辑，不仅仅提升了我们个人的开发效率，更简化了团队开发的难度。</p>
+<p>版本控制器示意图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/blog2.png" alt=""></p>
+<p>市面上曾经出现过很多版本控制器，比如SCCS, RCS, CVS, SVN, BitKeeperSCM，但是都不大好用。在2005年，大牛Linux Torvalds（Linux内核的最早作者）开发出了分布式版本控制器Git，因为它的灵活性和优越性，Git的用户成指数级上升，如今已经发展成了最受欢迎的版本控制器，奠定了版本控制领域的垄断地位。</p>
+<p>补充说明：所有的版本控制器系统，只能跟踪文本文件的改动，比如txt文件、网页和所有的程序源代码等等。版本控制器可以追踪每次的改动，比如在第7行添加了新的单词”Git”，在第8行删除了”Max”之类的具体修改信息。但是图片、视频、微软Word这类二进制文件，虽然版本控制器也可以追踪管理，比如从50KB改成了40KB，但是具体改了什么，是没法知道的。</p>
+<h2 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h2><h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p>使用MacOS的朋友有两种方法安装Git，第一种是先安装homebrew，然后通过homebrew安装Git，具体方法可以参观官网：<a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh</a>。第二种方法比较方便，直接下载官方安装包<a href="https://git-scm.com/download/mac" target="_blank" rel="noopener">https://git-scm.com/download/mac</a></p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Windows的朋友可以直接下载安装包<a href="https://git-scm.com/download/win，根据提示逐步完成。安装完成后，会创建一个git的文件夹，里面有个程序叫git" target="_blank" rel="noopener">https://git-scm.com/download/win，根据提示逐步完成。安装完成后，会创建一个git的文件夹，里面有个程序叫git</a> bash，打开git bash就能在一个Unix环境中使用Git了。</p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>使用Linux的小伙伴们，只要打开Terminal，输入以下的指令即可：</p>
+<pre><code># Ubuntu user
+$ sudo apt-get install git-all
+# Fedora user
+$ sudo yum install git-all</code></pre><h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p>版本库（repository）是一个Git会一直追踪的目录，这个目录中的所有文件的改动，包括各个文件的增加、删除和改动，都会被Git识别出来，以便Git可以追踪目录历史，并在将来某个时刻随时还原。</p>
+<p>首先我们先把我们的个人信息告诉git，包括名字和邮箱，这样git就能知道我们的身份，更好地管理每个版本库的贡献者。</p>
+<pre><code>$ git config --global user.name "yourname"
+$ git config --global user.name "youremail@gmail.com"</code></pre><p>我们使用<code>git config</code>加上—global参数，来设置全局配置，这样所有的版本库都会认识我们的身份，当然也可以为特定版本库指定不同的用户名和邮箱，这里我们直接使用这种省事的方法。</p>
+<p>创建一个版本库很简单，第一步先创建一个空目录，然后进入新创建的目录，使用<code>git init</code>命令：</p>
+<pre><code>$ mkdir new_repo
+$ cd new_repo
+$ git init</code></pre><p>这样一个Git版本库就创建好了，此时当前目录中还多了一个 .git 目录，这个目录中的信息可以帮助Git来跟踪管理版本库，所以千万不能删除。（.git目录是隐藏目录，需要使用 ls -ah 命令才能看到）</p>
+<p>要注意的是，我们不一定要使用空目录作为版本库，<strong>设定已有内容的目录为版本库</strong>也是可以的。</p>
+<p>现在我们在new_repo目录中编写一个new_file.txt文件，内容如下：</p>
+<pre><code>Git is a distributed version-control system.
+Git is awesome.</code></pre><p>然后我们使用<code>git add</code>将新文件添加到仓库：</p>
+<pre><code>$ git add new_file.txt</code></pre><p>然后我们再使用 <code>git commit</code> 将文件提交到仓库，并输入说明这次改动的内容：</p>
+<pre><code>$ git commit -m "Created a new file"</code></pre><p>-m 之后的内容虽然可以是任意内容，但是最好是有意义的文字说明，这样才能从历史记录中方便地查找改动记录。</p>
+<p>git commit 运行成功后，命令行中会提示1 file changed: 2 insertions，这样我们就知道有哪些具体的变动了。</p>
+<p>成功创建了一个新文件后，我们可以继续工作，对新文件 new_file.txt 进行修改，将内容改成如下：</p>
+<pre><code>Git is popular.
+Git is free.</code></pre><p>然后我们运行 <code>git status</code> 查看结果：</p>
+<pre><code>$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    modified:   new_file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre><p><code>git status</code>可以帮助我们了解版本库当前的状态，上面的结果告诉我们 new_file.txt 被修改过了，但是新的修改没有被提交。我们还可以使用 <code>git diff</code> 来查看具体被修改的内容：</p>
+<pre><code>$ git diff
+diff --git a/new_file.txt b/new_file.txt
+index 1647185..1c140a4 100644
+--- a/new_file.txt
++++ b/new_file.txt
+@@ -1,2 +1,2 @@
+-Git is a distributed version-control system.
+-Git is awesome.
++Git is popular.
++Git is free.</code></pre><p>确定我们要修改的内容后，我们使用 git add new_file.txt 将修改过的文件添加至版本库。这个时候再使用 git status 查看，你会得到以下的信息：</p>
+<pre><code>$ git add new_file.txt 
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restage HEAD &lt;file&gt;..." to unstage)
+
+    modified:   new_file.txt</code></pre><p>这告诉我们将要被提交的修改包括 new_file.txt，是时候提交了，我们还是直接使用 git commit 加上提交说明即可：</p>
+<pre><code>$ git commit -m "Modified the first two lines of new file"</code></pre><p>然后我们再使用 git status 就会看到当前目录是干净的，没有需要提交的修改：</p>
+<pre><code>On branch master
+nothing to commit, working tree clean</code></pre><p>注意：任何没有使用git add将其加入staged状态的文件，都没法使用commit提交其修改。</p>
+<h2 id="版本的增删改查、版本回退"><a href="#版本的增删改查、版本回退" class="headerlink" title="版本的增删改查、版本回退"></a>版本的增删改查、版本回退</h2><h3 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h3><p>但我们每次修改文件的时候，我们可以使用 git add 加上文件的名字，将文件加入版本库，然后再使用 git commit 提交修改。假设我们在版本库中创建了三个新的文件file1.txt，file2.txt，file3.txt，那我们我们可以使用以下的命令更新版本库：</p>
+<pre><code>$ git add file1.txt file2.txt file3.txt
+$ git commit -m "Added three new files"</code></pre><p>除了使用第一行的方式添加多个文件，我们可以使用git add .（英文句号）将当前所有有变化的文件加入版本库：</p>
+<pre><code>$ git add .</code></pre><h3 id="Git记录-log"><a href="#Git记录-log" class="headerlink" title="Git记录 (log)"></a>Git记录 (log)</h3><p>在git中，每一次提交修改(commit)，这条记录都会被保存起来。好比建大楼的时候，每个commit记录了盖楼需要添加和拿走的材料，这个施工过程都被记录下来了。而在git中，使用git log就能查看代码改动信息。</p>
+<p>基于我们之前对版本库的改动，我们使用<code>git log</code>就能看的以下的信息，其中包含了commit ID、作者（修改者）、日期和修改备注：</p>
+<pre><code>commit 2443b8c95bd2f426447b76b77ad5385a3d79a4ea (HEAD -&gt; master)
+Author: Enoch &lt;turingplanet@gmail.com&gt;
+Date:   Thu Oct 17 08:06:30 2019 -0700
+
+    Added three new files
+
+commit f76e81f3c8e7c54dd917e9616da64ff3fde4fab9
+Author: Enoch &lt;turingplanet@gmail.com&gt;
+Date:   Mon Oct 14 09:44:19 2019 -0700
+
+    Modified the first two lines of new file
+
+commit 2bbcd42eb3441375ae8f3c0b15d3f776302ad4fe
+Author: Enoch &lt;turingplanet@gmail.com&gt;
+Date:   Mon Oct 14 09:32:28 2019 -0700
+
+    Added a new file</code></pre><p>如果这个时候我们在file1.txt的内部添加以下内容：</p>
+<pre><code>new content</code></pre><p>然后我们再使用git status就能看到当前版本库中被修改的内容：</p>
+<pre><code>On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre><p>那我们就先将此改动添加（add）并提交（commit）到版本库：</p>
+<pre><code>$ git add file1.txt
+$ git commit -m "Modified file1"
+[master 0e84b3e] Modified file1
+ 1 file changed, 1 insertion(+)</code></pre><p>这个时候我们再查看log，则会发现我们多了一条commit：</p>
+<pre><code>commit 0e84b3e405630f1fc6ca9beb82cf5ca9ed38ea5a (HEAD -&gt; master)
+Author: Enoch &lt;walkerhaozheng@gmail.com&gt;
+Date:   Thu Oct 17 08:21:19 2019 -0700
+
+    Modified file1
+
+commit 2443b8c95bd2f426447b76b77ad5385a3d79a4ea
+Author: Enoch &lt;walkerhaozheng@gmail.com&gt;
+Date:   Thu Oct 17 08:06:30 2019 -0700
+
+    Added three new files
+...</code></pre><h3 id="Working-directory-Staging-area-Repository"><a href="#Working-directory-Staging-area-Repository" class="headerlink" title="Working directory, Staging area, Repository"></a>Working directory, Staging area, Repository</h3><p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311160438.png" alt=""></p>
+<p>为了帮助大家更好的理解工作区（working directory）、暂存区（staging directory）、和版本库（repository），我们可以对各个区域进行修改，然后通过git diff来查看他们之间的区别。</p>
+<p>比如我们先给file2.txt添加以下的内容：</p>
+<pre><code>new content in file2</code></pre><p>入行我们使用git diff来对比当前的工作区和上一次commit的版本库的区别：</p>
+<pre><code>$ git diff
+diff --git a/file2.txt b/file2.txt
+index e69de29..de59346 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -0,0 +1 @@
++new content in file2</code></pre><p>如果这个时候我们使用add file2的修改，将当前的改动添加到暂存区，那么我们使用git diff后，会发现没有任何信息，这是因为我们的改动被转移到暂且区了。所以我们可以使用diff加上–cached来对比当前的暂存区和上一个commit的区别：</p>
+<pre><code>$ git diff --cached
+diff --git a/file2.txt b/file2.txt
+index e69de29..de59346 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -0,0 +1 @@
++new content in file2</code></pre><p>我们可以再改动一下file3.txt，在其中添加以下内容：</p>
+<pre><code>new content in file3</code></pre><p>我们可以使用git diff HEAD来对比当前暂且区和工作区的区别：</p>
+<pre><code>diff --git a/file2.txt b/file2.txt
+index e69de29..de59346 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -0,0 +1 @@
++new content in file2
+diff --git a/file3.txt b/file3.txt
+index e69de29..944ef83 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -0,0 +1 @@
++new content in file3</code></pre><p>这个时候我们将三个区间的内容进行对比，大家就能理解三个区间的关系了：</p>
+<pre><code>$ git diff
+diff --git a/file3.txt b/file3.txt
+index e69de29..944ef83 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -0,0 +1 @@
++new content in file3
+
+$ git diff --cached
+diff --git a/file2.txt b/file2.txt
+index e69de29..de59346 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -0,0 +1 @@
++new content in file2
+
+$ git diff HEAD
+diff --git a/file2.txt b/file2.txt
+index e69de29..de59346 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -0,0 +1 @@
++new content in file2
+diff --git a/file3.txt b/file3.txt
+index e69de29..944ef83 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -0,0 +1 @@
++new content in file3</code></pre><p>但我们确定要修改的内容后，我们可以直接add并commit，将所有的修改加到暂存区后并提交到版本库：</p>
+<pre><code>$ git add .
+$ git commit -m "Modified file2 and file3"
+[master 0aef827] Modified file2 and file3
+ 2 files changed, 2 insertions(+)</code></pre><h3 id="时光穿越机-checkout-amp-reset"><a href="#时光穿越机-checkout-amp-reset" class="headerlink" title="时光穿越机 (checkout &amp; reset)"></a>时光穿越机 (checkout &amp; reset)</h3><p>有时候我们对一些文件做了改动，并加到暂存区，但是又后悔了，这些操作在 git 中也能实现。比如，我们继续改动file1.txt，在其中添加一行的内容：</p>
+<pre><code>new content
+more content</code></pre><p>然后我们把file1.txt加入暂存区，如果我们想要反悔，可以直接使用 git reset 把 file1.txt 从暂存区拉回到工作区，然后对文件做相应的修改后再add：</p>
+<pre><code>$ git add file1.txt
+$ git status -s 
+M  file1.txt # working directory
+$ git reset file1.txt
+Unstaged changes after reset:
+M    file1.txt
+$ git status -s 
+ M file1.txt # staging area</code></pre><p>然后我们把file1.txt中第一行new content删除，只剩下more content之后，直接add然后commit：</p>
+<pre><code>$ git add file1.txt
+$ git commit -m "Added more content in file1"</code></pre><p>接下来我们来了解git中的checkout，checkout可以帮助我们让当前的工作区回到特定的某个commit，比如我们使用git log查看过去的一些commit：</p>
+<pre><code>$ git log --oneline
+5c10f81 (HEAD -&gt; master) Added more content in file1
+0aef827 Modified file2 and file3
+0e84b3e Modified file1
+2443b8c Added three new files
+f76e81f Modified the first two lines of new file
+2bbcd42 Added a new file</code></pre><p>然后我们使用checkout回到 0aef827 这个commit，可以发现 file1.txt 的内容也变回了，因为在那个时候 file1 的内容并没有被改动，所以我们用了git log之后并没有 Added more content in file1 这个commit：</p>
+<pre><code>$ git checkout 0aef827
+Note: checking out '0aef827'.
+....
+$ cat file1.txt
+new content
+$ git log --oneline
+0aef827 (HEAD) Modified file2 and file3
+0e84b3e Modified file1
+2443b8c Added three new files
+f76e81f Modified the first two lines of new file
+2bbcd42 Added a new file</code></pre><p>若想要在从过去回到现在，我们可以使用 git checkout master：</p>
+<pre><code>$ git checkout master
+$ cat file1.txt
+more content</code></pre><p>我们可以通过下面的图片对checkout进行理解：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311163925.png" alt=""></p>
+<p>这里的HEAD其实是一个指针，可以让我们知道当前处于哪一个commit。如果我们想要让HEAD彻底回到某一个commit，我们可以使用在reset后面加上–hard参数：</p>
+<pre><code>$ git reset --hard HEAD # 当前add的工作全部消失，回到上一次commit 
+HEAD is now at 5c10f81 Added more content in file1
+$ git log --oneline
+5c10f81 (HEAD -&gt; master) Added more content in file1
+0aef827 Modified file2 and file3
+0e84b3e Modified file1
+...
+$ git reset --hard HEAD^ # 回到当前master的上一个commit:c0aef827
+$ git reset --hard 0e84b3e # 回到具体的某一个commit
+$ git log --oneline 
+0e84b3e (HEAD -&gt; master) Modified file1
+2443b8c Added three new files
+f76e81f Modified the first two lines of new file
+2bbcd42 Added a new file</code></pre><p>我们的 Modified file2 and file3 彻底消失了！如果我们想要重新挽回改动，可以使用 git reflog 查看最近做的所有的 HEAD 的改动，并使用 reset 重回到想要退回的 commit：</p>
+<pre><code>$ git reflog
+0e84b3e (HEAD -&gt; master) HEAD@{0}: reset: moving to 0e84b3e
+0aef827 HEAD@{1}: reset: moving to HEAD^
+5c10f81 HEAD@{2}: reset: moving to HEAD
+5c10f81 HEAD@{3}: checkout: moving from 0aef8274ff89375120cbd38be7e4a494aa19f0e7 to master
+0aef827 HEAD@{4}: checkout: moving from master to 0aef827
+5c10f81 HEAD@{5}: commit: Added more content in file1
+...
+$ git reset --hard 5c10f81</code></pre><p>通过查看 file1.txt 的内容，确定一下我们时空穿越成功：</p>
+<pre><code>$ git cat file1.txt
+more content</code></pre><h2 id="分支、合并、标签管理"><a href="#分支、合并、标签管理" class="headerlink" title="分支、合并、标签管理"></a>分支、合并、标签管理</h2><p>分支是什么？我们可以简单地把每个分支理解为一个平行宇宙，每个平行宇宙之间的变化不会影响到其他的宇宙，只有我们强行合并的时候，平行宇宙之间的改动才会互相影响。</p>
+<p>那为什么我们需要分支呢？在开发软件的时候，我们经常需要同时开发不同的版本，比如版本1是稳定版本，而版本2需要开发新的功能A，版本3需要开发新的功能B，如果同时在一个分支中开发三个版本，那会乱套的。所以我们需要创建两个单独的分支给版本2和版本3进行开发，当各个版本的功能完善后，我们就可以将新的改变合并到稳定版本中，这样我们的开发流程即分工明确，也不会出错。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311160859.png" alt=""></p>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><p>在我们初始化一个版本库的时候，Git会默认创建一个master分支，提交也都默认提交到master中。我们有个HEAD指针，这个指针指明我们当前在哪个分支的commit中工作，如果我们切换到别的分支，我们的HEAD也会转移指向。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311160938.png" alt=""></p>
+<p>如果要创建分支，我们直接使用<code>git branch &lt;branch_name&gt;</code>即可，我们先创建一个分支dev，然后查看所有分支：</p>
+<pre><code>$ git branch dev 
+$ git branch
+  dev
+* master</code></pre><p>如果我们想要将 HEAD 切换到 dev 分支，我们可以使用 checkout：</p>
+<pre><code>$ git checkout dev 
+Switched to branch 'dev'
+$ git branch
+* dev
+  master</code></pre><p>使用 <code>git checkout -b &lt;branch_name&gt;</code>，能直接创建并切换到新的分支：</p>
+<pre><code>$ git checkout -b dev
+Switched to a new branch 'dev'</code></pre><p>dev 分支中的文件和 master 的文件是一样的，当 HEAD 指向 dev 的时候，我们对文件夹中的修改是不会影响到 master 分支的。我们把 file1.txt 的内容改为 more content in dev branch，然后提交：</p>
+<pre><code>$ git commit -am "Modified file1 in dev branch" # -am参数: 添加所有改变，然后提交</code></pre><h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><p>如果要把 dev 分支中的更新推送到 master 中，我们需要切换到 master，然后再将 dev 的更新合并过来：</p>
+<pre><code>$ git checkout master
+Switched to branch 'master'
+
+$ git merge dev
+Updating 5c10f81..323b3eb
+Fast-forward
+ file1.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git log --oneline --graph
+* 323b3eb (HEAD -&gt; master, dev) Modified file1 in dev branch
+* 5c10f81 Added more content in file1
+* 0aef827 Modified file2 and file3
+...</code></pre><p>默认的 merge 是使用 Fast forward 方式，并不会保存分支图案，如果想要 log 保存分支的信息，我们在merge的时候需要添加 -no-ff 参数更新comment：</p>
+<pre><code>$ git reset --hard HEAD^ 
+$ git merge --no-ff -m "Add merge info" dev
+Merge made by the 'recursive' strategy.
+ file1.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git log --oneline --graph
+*   16572d5 (HEAD -&gt; master) Add merge info
+|\  
+| * 323b3eb (dev) Modified file1 in dev branch 
+|/  
+* 5c10f81 Added more content in file1
+...</code></pre><h3 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h3><p>在多人同时开发不同分支的时候，分支冲突是很常见的现象。比如程序员A在master中对file1进行修改并提交，而程序员B在dev分支中对file1也进行了修改并提交，那么在我们把dev合并到master的时候，我们就会发现冲突。</p>
+<p>如果程序员A在file1中添加新的内容 new content in master，然后程序员B在file2中添加新的内容new content in dev，那么当我们查看各个分支log的时候，则会有以下的信息</p>
+<pre><code># master 的 log
+f844b75 (HEAD -&gt; master) new content in master
+dda9338 Add merge info
+323b3eb Modified file1 in dev branch
+...
+# dev 的 log
+aa1a832 (HEAD -&gt; dev) new content in dev
+323b3eb Modified file1 in dev branch
+5c10f81 Added more content in file1
+...</code></pre><p>然后我们尝试把dev合并到master，就会输出冲突的信息：</p>
+<pre><code>$ git branch 
+  dev
+* master
+$ git merge dev
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+Automatic merge failed; fix conflicts and then commit the result.</code></pre><p>当git发现file1在master和dev上的版本不同时，就会提示冲突，我们只要打开file1，就会看到git给文件的标记：</p>
+<pre><code># file1.txt
+more content in dev branch
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+new content in master
+=======
+new content in dev
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev        </code></pre><p>我们<strong>手动合并两者的不同，然后提交就可以了</strong>。</p>
+<pre><code># file1.txt
+more content in dev branch
+merged content from master and dev
+$ git commit -am "solve conflict""
+[master f0687a0] solve confict</code></pre><p>这时候我们再看看master的log：</p>
+<pre><code>$ git log --oneline --graph
+*   f0687a0 (HEAD -&gt; master) solve confict
+|\  
+| * aa1a832 (dev) new content in dev
+* | f844b75 new content in master
+* |   dda9338 Add merge info
+|\ \  
+| |/  
+| * 323b3eb Modified file1 in dev branch
+|/  
+* 5c10f81 Added more content in file1
+...</code></pre><h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>标签是我们对commit设置的别名，可以帮助我们对commit进行更好的管理，如果你的老板叫你发布一个版本，然后告诉你commit id是f844b3…，这样的交流是容易出错的，因为id号又长又臭，很难管理。如果我们使用标签，比如每个版本都有专属的版本号，比如v2.0之类的，这样我们发布和管理commit就更方便了。</p>
+<p>如果想要创建标签，只要切换到想要打标签的分支上，使用<code>git tag &lt;name&gt;</code>就好了：</p>
+<pre><code>$ git branch
+  dev
+* master
+$ git tag v1.0 # 新的标签
+$ git log --oneline
+f0687a0 (HEAD -&gt; master, tag: v1.0) solve confict
+aa1a832 (dev) new content in dev
+f844b75 new content in master
+...</code></pre><p>tag默认情况下是给当前分支的最新commit打标签，如果想要给旧的commit打上标签，使用<code>git tag &lt;tag_name&gt; &lt;commit_id&gt;</code>就好了：</p>
+<pre><code>$ git tag v0.9 f844b75
+$ git log --oneline
+f0687a0 (HEAD -&gt; master, tag: v1.0) solve confict
+aa1a832 (dev) new content in dev
+f844b75 (tag: v0.9) new content in master
+...</code></pre><p>如果这个时候我们想要回到过去的版本，只需要使用标签名就可以了：</p>
+<pre><code>$ git checkout v0.9
+$ git log --oneline
+f844b75 (HEAD, tag: v0.9) new content in master
+dda9338 Add merge info</code></pre><p>注意：标签是和commit挂钩的，如果这个commit同时出现在多个分支上，那么这些分支都能查看此标签。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><pre><code>$ git branch # 查看当前版本库所有分支
+$ git branch &lt;name&gt; # 创建新的分支
+$ git checkout &lt;name&gt; or git switch &lt;name&gt; # 切换分支
+$ git checkout -b &lt;name&gt; or git switch -c &lt;name&gt; # 创建并切换至新的分支
+$ git merge &lt;name&gt; # 将name分支合并至当前分支
+$ git log --oneline --graph # 查看具体log信息
+$ git branch -d &lt;name&gt; # 删除分支
+$ git tag &lt;tag_name&gt; # 为当前的commit创建新的标签
+$ git tag -d &lt;tag_name&gt; # 删除标签</code></pre><h2 id="远程仓库GitHub"><a href="#远程仓库GitHub" class="headerlink" title="远程仓库GitHub"></a>远程仓库GitHub</h2><p>Git是分布式版本控制系统，同一个Git仓库，可以分布到不同的机器上。通常情况下，我们在一台服务器上部署一个主版本库，然后其他的机器就从此服务器上下载版本库，将版本库更新后，再将本地的版本库推送到主服务器，同时更新服务上的版本库，达到远程操作版本库的效果。</p>
+<p>可是自己搭建服务器很麻烦，而且也不安全，多亏了GitHub这个免费的版本库托管网站，我们只要注册一个账户，就能创建属于自己的远程仓库。</p>
+<h3 id="添加远程库GitHub"><a href="#添加远程库GitHub" class="headerlink" title="添加远程库GitHub"></a>添加远程库GitHub</h3><p>在<a href="https://github.com/" target="_blank" rel="noopener">github</a>上注册一个账户，然后即可创建一个新的网上版本库：</p>
+<img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311162308.png" style="zoom:67%;">
+
+<h3 id="远程数据库克隆"><a href="#远程数据库克隆" class="headerlink" title="远程数据库克隆"></a>远程数据库克隆</h3><p>如果想要将别人的网上版本库下载到自己的电脑中，我们只需要找到版本库的地址，然后使用git clone命令克隆就可以了，非常方便。</p>
+<p>这边作为演示，提供用Python编写的图像处理器供大家下载。首先登入gitHub版本库的地址<a href="https://github.com/turingplanet/digital-image-processor，点击绿色的框复制repo的地址。" target="_blank" rel="noopener">https://github.com/turingplanet/digital-image-processor，点击绿色的框复制repo的地址。</a></p>
+<img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311162550.png">
+
+<p>然后在本地电脑中使用git clone复制版本库：</p>
+<pre><code>$ git clone https://github.com/turingplanet/digital-image-processor.git</code></pre><p>最后进入版本库，直接运行程序即可：</p>
+<pre><code>$ cd digital-image-processor
+$ python3 gui.py</code></pre><p>然后就可以使用一个简易的图像处理器啦~</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311163025.png" alt=""></p>
+<p>GitHub上有无数的开源程序供大家下载，都是使用相同的方法，现在大家可以去尽情探索了~</p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><pre><code>$ git remote add &lt;remote_name&gt; &lt;remote_address&gt; # 添加远程仓库
+$ git push -u &lt;remote_name&gt; master # 推送本地仓库至远程仓库
+$ git clone &lt;remote_address&gt; # 克隆远程仓库</code></pre><blockquote>
+<p>特别鸣谢</p>
+<p>参考网址</p>
+<p><a href="https://haozhengio.com/git和github教程/" target="_blank" rel="noopener">https://haozhengio.com/git%E5%92%8Cgithub%E6%95%99%E7%A8%8B/</a></p>
+</blockquote>
+<h2 id="如何提交代码到Github项目"><a href="#如何提交代码到Github项目" class="headerlink" title="如何提交代码到Github项目"></a>如何提交代码到Github项目</h2><ol>
+<li><p>从源仓库OS-ABC/Kcoin-Golang 中把代码Fork 到自己的Github 账号里。</p>
+</li>
+<li><p>在自己Fork 的仓库中获取该仓库的Clone 地址。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161013.png" alt=""></p>
+</li>
+<li><p>使用git 命令将仓库Clone 到本地。</p>
+<p>命令：git clone &lt;第二步中复制的仓库地址&gt;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200310004716.png" alt=""></p>
+</li>
+<li><p>进入到Clone 下来的仓库目录中</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200310005103.png" alt=""></p>
+</li>
+<li><p>把源仓库（OS-ABC/Kcoin-Golang）加入到远程仓库中，方便以后拉取更新</p>
+<p>​    (1) 复制源仓库的地址</p>
+<img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200310005200.png" style="zoom:50%;">
+
+<p>​    (2) 在git 中把源仓库地址加入到远程仓库中</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161046.png" alt=""></p>
+<p>​    (3) 查看一下当前远程仓库的信息</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161109.png" alt=""></p>
+</li>
+<li><p>切换到dev 分支</p>
+<p>如果使用的是windows 下的git bash，可以看到最后蓝色部分指的是当前分支（master）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161330.png" alt=""></p>
+<p>也可以使用git 命令查看当前的分支情况。</p>
+<p>命令：git branch -a</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200310005345.png" alt=""></p>
+<p>红色的是远程仓库的分支信息，第一行前面有“*”的是当前分支。<br>下面我们要在本地新建一个dev 分支，并让这个dev 分支和origin 仓库的dev 分支拥有<br>相同历史。<br>命令：git checkout -b dev origin/dev</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161402.png" alt=""></p>
+<p>执行完这条命令后，可以看到当前分支已经变为dev 了:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161424.png" alt=""></p>
+</li>
+<li><p>拉取 upstream 上dev 分支的更新</p>
+<p>命令：git pull upstream dev</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311161447.png" alt=""></p>
+</li>
+<li><p>修改三连</p>
+<p> （1）git add .<br> （2）git commit -m ‘this is a commit’<br> （3）git push origin dev</p>
+</li>
+<li><p>在github 页面上提PR</p>
+<p>首先进入自己fork 下来的仓库（origin），点击new pull request。<br>然后要特别注意下面的四个选择框</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/20200311164134.png" alt=""></p>
+<p>按照中间的箭头方向，一定要从自己fork 的仓库（origin）的dev 分支到源仓库<br>（upstream）的dev 分支，如果提到了upstream的master 分支上去，就会出现pr 中有<br>一长串的commit 的情况。</p>
+</li>
+</ol>
+<p>   最后在提pr 的页面看一看文件改动对比，看看是不是都是自己想改的，然后填写好pr<br>   描述创建pr 就可以了。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Tian-JQ.github.io" rel="external nofollow noreferrer">Arjun</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://Tian-JQ.github.io/2020/02/15/git-ji-chu/">https://Tian-JQ.github.io/2020/02/15/git-ji-chu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://Tian-JQ.github.io" target="_blank">Arjun</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+    <div class="addthis_inline_share_toolbox"></div>
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2020-02-15T09-37-35',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/02/20/github-zhong-yu-dao-de-bug/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/科技1.jpg" class="responsive-img" alt="GitHub中遇到的Bug">
+                        
+                        <span class="card-title">GitHub中遇到的Bug</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1 GitHub无法访问的问题1 原理：
+访问网址时先搜索hosts文件，如果由网址对应的ip则不需要dns域名解析，因此可以将网址的ip配成静态ip，减少解析过程，提高访问速度。
+2 问题解决：
+使用记事本打开hosts文件（win10的
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/github/" class="post-category">
+                                    github
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/bug/">
+                        <span class="chip bg-color">bug</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/09/cheng-xu-yuan-su-yang/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/Tian-JQ/images/img/100605-1499825165dee3.jpg" class="responsive-img" alt="程序员素养">
+                        
+                        <span class="card-title">程序员素养</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            程序员素养专业基础知识
+代码
+掌握至少一门语言，会编程，写代码解决问题，也要有手写代码的能力。
+问：写一个坦克大栈模型？
+
+算法+数据结构
+算法是解决问题的基本思想。
+问：100亿数据中选出10个最小数据？
+
+问题处理
+处理问题是最终目的。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BA%92%E8%81%94%E7%BD%91/" class="post-category">
+                                    互联网
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">
+                        <span class="chip bg-color">程序员</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://Tian-JQ.github.io" target="_blank">Arjun</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Tian-JQ" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1139215147@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1139215147" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1139215147" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

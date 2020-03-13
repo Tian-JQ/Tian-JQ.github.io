@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>天天XIO习</title>
+  
+  <subtitle>小白的江湖修炼</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://tian-jq.github.io/"/>
+  <updated>2020-03-11T02:22:16.000Z</updated>
+  <id>https://tian-jq.github.io/</id>
+  
+  <author>
+    <name>Arjun</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typora+Github 解决图片插入问题</title>
+    <link href="https://tian-jq.github.io/2020/03/11/typora-github-jie-jue-tu-pian-cha-ru-wen-ti/"/>
+    <id>https://tian-jq.github.io/2020/03/11/typora-github-jie-jue-tu-pian-cha-ru-wen-ti/</id>
+    <published>2020-03-11T02:22:16.000Z</published>
+    <updated>2020-03-11T02:22:16.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;目前较为好用的图床方案是PicGo+Github,
+        
+      
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="https://Tian-JQ.github.io/categories/blog/"/>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/tags/github/"/>
+    
+      <category term="Hexo" scheme="https://Tian-JQ.github.io/tags/Hexo/"/>
+    
+      <category term="Typora" scheme="https://Tian-JQ.github.io/tags/Typora/"/>
+    
+      <category term="博客" scheme="https://Tian-JQ.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang-理解接口数据类型</title>
+    <link href="https://tian-jq.github.io/2020/03/08/golang-li-jie-jie-kou-shu-ju-lei-xing/"/>
+    <id>https://tian-jq.github.io/2020/03/08/golang-li-jie-jie-kou-shu-ju-lei-xing/</id>
+    <published>2020-03-07T17:53:20.000Z</published>
+    <updated>2020-03-07T17:53:20.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;认识接口&quot;&gt;&lt;a href=&quot;#认识接口&quot; class=&quot;headerlink&quot; title=&quot;认识接口&quot;&gt;&lt;/a&gt;认识接口&lt;/h2&gt;&lt;p&gt;Go
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Golang" scheme="https://Tian-JQ.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="https://Tian-JQ.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VirtualBox 安装配置</title>
+    <link href="https://tian-jq.github.io/2020/03/02/virtualbox-an-zhuang-pei-zhi/"/>
+    <id>https://tian-jq.github.io/2020/03/02/virtualbox-an-zhuang-pei-zhi/</id>
+    <published>2020-03-01T16:24:29.000Z</published>
+    <updated>2020-03-01T16:24:29.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;VirtualBox虚拟机与Linux系统的安装配置（以安装一个名为Hadoop的Ubuntu-Linux为例）&lt;/p&gt;
+&lt;h2 id=&quot;VirtualBox虚拟机下载安装&quot;&gt;&lt;a href=&quot;#VirtualBox虚拟机下载安装&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="互联网" scheme="https://Tian-JQ.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="VirtualBox" scheme="https://Tian-JQ.github.io/tags/VirtualBox/"/>
+    
+      <category term="Ubuntu" scheme="https://Tian-JQ.github.io/tags/Ubuntu/"/>
+    
+      <category term="Linux" scheme="https://Tian-JQ.github.io/tags/Linux/"/>
+    
+      <category term="虚拟机" scheme="https://Tian-JQ.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法解读-Z字形变换(Go)</title>
+    <link href="https://tian-jq.github.io/2020/02/25/suan-fa-jie-du-z-zi-xing-bian-huan/"/>
+    <id>https://tian-jq.github.io/2020/02/25/suan-fa-jie-du-z-zi-xing-bian-huan/</id>
+    <published>2020-02-24T17:46:09.000Z</published>
+    <updated>2020-02-24T17:46:09.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/zigzag-conversion/&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://Tian-JQ.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Golang" scheme="https://Tian-JQ.github.io/tags/Golang/"/>
+    
+      <category term="算法" scheme="https://Tian-JQ.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://Tian-JQ.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang-了解rune数据类型</title>
+    <link href="https://tian-jq.github.io/2020/02/24/golang-liao-jie-rune-shu-ju-lei-xing/"/>
+    <id>https://tian-jq.github.io/2020/02/24/golang-liao-jie-rune-shu-ju-lei-xing/</id>
+    <published>2020-02-24T03:49:37.000Z</published>
+    <updated>2020-02-24T03:49:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Golang中rune数据类型是什么？&quot;&gt;&lt;a href=&quot;#Golang中rune数据类型是什么？&quot; class=&quot;headerlink&quot; title=&quot;Golang中rune数据类型是什么？&quot;&gt;&lt;/a&gt;Golang中rune数据类型是什么？&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Golang" scheme="https://Tian-JQ.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="https://Tian-JQ.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法解读-最长回文字符串（Go）</title>
+    <link href="https://tian-jq.github.io/2020/02/24/suan-fa-jie-du-zui-chang-hui-wen-zi-fu-chuan-go/"/>
+    <id>https://tian-jq.github.io/2020/02/24/suan-fa-jie-du-zui-chang-hui-wen-zi-fu-chuan-go/</id>
+    <published>2020-02-24T03:48:05.000Z</published>
+    <updated>2020-02-24T03:48:05.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://Tian-JQ.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="Golang" scheme="https://Tian-JQ.github.io/tags/Golang/"/>
+    
+      <category term="算法" scheme="https://Tian-JQ.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://Tian-JQ.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo中遇到的Bug</title>
+    <link href="https://tian-jq.github.io/2020/02/20/hexo-zhong-yu-dao-de-bug/"/>
+    <id>https://tian-jq.github.io/2020/02/20/hexo-zhong-yu-dao-de-bug/</id>
+    <published>2020-02-20T06:04:13.000Z</published>
+    <updated>2020-02-20T06:04:13.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一-Hexo-d显示成功，本地正常运行，但远程不能显示网页的问题&quot;&gt;&lt;a href=&quot;#一-Hexo-d显示成功，本地正常运行，但远程不能显示网页的问题&quot; class=&quot;headerlink&quot; title=&quot;一 Hexo
+        
+      
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="https://Tian-JQ.github.io/categories/blog/"/>
+    
+    
+      <category term="bug" scheme="https://Tian-JQ.github.io/tags/bug/"/>
+    
+      <category term="Hexo" scheme="https://Tian-JQ.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub中遇到的Bug</title>
+    <link href="https://tian-jq.github.io/2020/02/20/github-zhong-yu-dao-de-bug/"/>
+    <id>https://tian-jq.github.io/2020/02/20/github-zhong-yu-dao-de-bug/</id>
+    <published>2020-02-20T05:47:54.000Z</published>
+    <updated>2020-02-20T05:47:54.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-GitHub无法访问的问题&quot;&gt;&lt;a href=&quot;#1-GitHub无法访问的问题&quot; class=&quot;headerlink&quot; title=&quot;1 GitHub无法访问的问题&quot;&gt;&lt;/a&gt;1 GitHub无法访问的问题&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1
+        
+      
+    
+    </summary>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/categories/github/"/>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/tags/github/"/>
+    
+      <category term="bug" scheme="https://Tian-JQ.github.io/tags/bug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git基础</title>
+    <link href="https://tian-jq.github.io/2020/02/15/git-ji-chu/"/>
+    <id>https://tian-jq.github.io/2020/02/15/git-ji-chu/</id>
+    <published>2020-02-15T01:37:35.000Z</published>
+    <updated>2020-02-15T01:37:35.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;版本控制器&quot;&gt;&lt;a href=&quot;#版本控制器&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://Tian-JQ.github.io/categories/Git/"/>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/tags/github/"/>
+    
+      <category term="git" scheme="https://Tian-JQ.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员素养</title>
+    <link href="https://tian-jq.github.io/2020/02/09/cheng-xu-yuan-su-yang/"/>
+    <id>https://tian-jq.github.io/2020/02/09/cheng-xu-yuan-su-yang/</id>
+    <published>2020-02-09T08:33:48.000Z</published>
+    <updated>2020-02-09T08:33:48.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;程序员素养&quot;&gt;&lt;a href=&quot;#程序员素养&quot; class=&quot;headerlink&quot; title=&quot;程序员素养&quot;&gt;&lt;/a&gt;程序员素养&lt;/h2&gt;&lt;h3 id=&quot;专业基础知识&quot;&gt;&lt;a href=&quot;#专业基础知识&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="互联网" scheme="https://Tian-JQ.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="程序员" scheme="https://Tian-JQ.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+      <category term="随笔" scheme="https://Tian-JQ.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google Chrome+IDM</title>
+    <link href="https://tian-jq.github.io/2020/02/09/google-chrome-idm/"/>
+    <id>https://tian-jq.github.io/2020/02/09/google-chrome-idm/</id>
+    <published>2020-02-09T07:30:43.000Z</published>
+    <updated>2020-02-09T07:30:43.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;谷歌浏览器&quot;&gt;&lt;a href=&quot;#谷歌浏览器&quot; class=&quot;headerlink&quot; title=&quot;谷歌浏览器&quot;&gt;&lt;/a&gt;谷歌浏览器&lt;/h2&gt;&lt;h3 id=&quot;为何推荐谷歌浏览器：&quot;&gt;&lt;a href=&quot;#为何推荐谷歌浏览器：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://Tian-JQ.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Google" scheme="https://Tian-JQ.github.io/tags/Google/"/>
+    
+      <category term="Chrome" scheme="https://Tian-JQ.github.io/tags/Chrome/"/>
+    
+      <category term="IDM" scheme="https://Tian-JQ.github.io/tags/IDM/"/>
+    
+      <category term="下载器" scheme="https://Tian-JQ.github.io/tags/%E4%B8%8B%E8%BD%BD%E5%99%A8/"/>
+    
+      <category term="浏览器" scheme="https://Tian-JQ.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>授人以渔之学习</title>
+    <link href="https://tian-jq.github.io/2020/02/08/shou-ren-yi-yu-zhi-xue-xi/"/>
+    <id>https://tian-jq.github.io/2020/02/08/shou-ren-yi-yu-zhi-xue-xi/</id>
+    <published>2020-02-08T03:57:58.000Z</published>
+    <updated>2020-02-08T03:57:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;学习–搜索方法&quot;&gt;&lt;a href=&quot;#学习–搜索方法&quot; class=&quot;headerlink&quot; title=&quot;学习–搜索方法&quot;&gt;&lt;/a&gt;学习–搜索方法&lt;/h2&gt;&lt;h3 id=&quot;微信搜一搜&quot;&gt;&lt;a href=&quot;#微信搜一搜&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://Tian-JQ.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="教程" scheme="https://Tian-JQ.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="学习方法" scheme="https://Tian-JQ.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="编程" scheme="https://Tian-JQ.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>蝙蝠和人类</title>
+    <link href="https://tian-jq.github.io/2020/02/06/bian-fu-he-ren-lei/"/>
+    <id>https://tian-jq.github.io/2020/02/06/bian-fu-he-ren-lei/</id>
+    <published>2020-02-06T01:04:35.000Z</published>
+    <updated>2020-02-06T01:04:35.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;蝙蝠传说&quot;&gt;&lt;a href=&quot;#蝙蝠传说&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="文章" scheme="https://Tian-JQ.github.io/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="文章" scheme="https://Tian-JQ.github.io/tags/%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础</title>
+    <link href="https://tian-jq.github.io/2020/02/01/mysql-ji-chu/"/>
+    <id>https://tian-jq.github.io/2020/02/01/mysql-ji-chu/</id>
+    <published>2020-02-01T05:03:38.000Z</published>
+    <updated>2020-02-01T05:03:38.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL学习笔记&quot;&gt;&lt;a href=&quot;#MySQL学习笔记&quot; class=&quot;headerlink&quot; title=&quot;MySQL学习笔记&quot;&gt;&lt;/a&gt;MySQL学习笔记&lt;/h1&gt;&lt;h2 id=&quot;登录和退出MySQL服务器&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://Tian-JQ.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="https://Tian-JQ.github.io/tags/mysql/"/>
+    
+      <category term="sql" scheme="https://Tian-JQ.github.io/tags/sql/"/>
+    
+      <category term="数据库" scheme="https://Tian-JQ.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图床</title>
+    <link href="https://tian-jq.github.io/2020/02/01/tu-chuang/"/>
+    <id>https://tian-jq.github.io/2020/02/01/tu-chuang/</id>
+    <published>2020-02-01T02:40:55.000Z</published>
+    <updated>2020-02-01T02:40:55.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;编写md文档时，图片处理及其让人头疼，一旦本地图片丢失，md文档中图片就会无法显示，所以我们需要将图保存到图床，即使本地图片丢失，md也不受影响。&lt;/p&gt;
+&lt;p&gt;免费图床方案：PicGo+jsdelivr+github&lt;/p&gt;
+&lt;h2 id=&quot;本文用到的工具或网站&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/categories/github/"/>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/tags/github/"/>
+    
+      <category term="markdown" scheme="https://Tian-JQ.github.io/tags/markdown/"/>
+    
+      <category term="图床" scheme="https://Tian-JQ.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo+GitHub搭建个人博客</title>
+    <link href="https://tian-jq.github.io/2020/01/31/hexo-github-da-jian-ge-ren-bo-ke/"/>
+    <id>https://tian-jq.github.io/2020/01/31/hexo-github-da-jian-ge-ren-bo-ke/</id>
+    <published>2020-01-31T01:50:24.000Z</published>
+    <updated>2020-01-31T01:50:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一-搭建&quot;&gt;&lt;a href=&quot;#一-搭建&quot; class=&quot;headerlink&quot; title=&quot;一  搭建&quot;&gt;&lt;/a&gt;一  搭建&lt;/h2&gt;&lt;h3 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="https://Tian-JQ.github.io/categories/blog/"/>
+    
+    
+      <category term="github" scheme="https://Tian-JQ.github.io/tags/github/"/>
+    
+      <category term="Hexo" scheme="https://Tian-JQ.github.io/tags/Hexo/"/>
+    
+      <category term="博客" scheme="https://Tian-JQ.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
